@@ -33,34 +33,6 @@ contract FractionalNFT is ERC20, Ownable, ERC721Holder{
     mapping(address => mapping(uint256 => bool)) public tokenIdexists;
     mapping(address => mapping(uint256 => saleItem)) public itemForSale;
 
-    event Fraction(
-        address indexed user,
-        address nftCollection,
-        uint256 tokenId,
-        uint256 totalNFTFractions
-    );
-
-    event SaleCreated(
-        address nftCollection,
-        uint256 tokenId,
-        uint256 price
-    );
-
-    event PurchaseCreated(
-        address nftCollection,
-        uint256 tokenId,
-        uint256 price,
-        bool canReedeem
-    );
-
-    event Reedeem(
-        address user,
-        uint256 ReedeemedAmount,
-        address _nftCollection,
-        uint256 tokenId,
-        uint256 FractionalNFTAmount
-    );
-
     function totalSupply () public view override returns(uint256){
         return __totalSupply;
     }
